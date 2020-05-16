@@ -1,7 +1,10 @@
+import { Observable } from 'rxjs/Observable';
+import { ShoppingCart } from './models/shopping-cart';
 import { Product } from './models/product';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/take'; 
+import 'rxjs/add/operator/map'; 
 
 @Injectable()
 export class ShoppingCartService {
@@ -14,9 +17,10 @@ export class ShoppingCartService {
     });
   }
 
-  async getCart() {
+  async getCart(): Promise<Observable<ShoppingCart>> {
     let cartId = await this.getOrCreateCartId();
-    return this.db.object('/shopping-carts/' + cartId);
+    return this.db.object('/shopping-carts/' + cartId)
+      .map(x => new ShoppingCart(x.items));
   }
 
   private getItem(cartId: string, productId: string) {
@@ -45,7 +49,7 @@ export class ShoppingCartService {
     let item$ = this.getItem(cartId, product.$key);
     item$.take(1)
     .subscribe((item:any) => {
-       item$.update({product, quantity: (item.quantity || 0) + 1});
+       item$.update({product, quantity: (item.quantity || 0) + change});
     });
   }
 }
