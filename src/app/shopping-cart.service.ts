@@ -45,7 +45,7 @@ export class ShoppingCartService {
     let item$ = this.getItem(cartId, product.$key);
     item$.take(1)
     .subscribe((item:any) => {
-       item$.update({product, quantity: (item.quantity || 0) + 1});
+       item$.update({product, quantity: (item.quantity || 0) + change});
     });
   }
 }
