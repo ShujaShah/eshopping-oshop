@@ -2,7 +2,7 @@ import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/data
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase'; 
 import { FirebaseApp } from 'angularfire2';
-import { AppUser } from './models/app.user';
+import { AppUser } from 'shared/models/app.user';
 
 @Injectable()
 export class UserService {
