@@ -1,11 +1,45 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top"> 
   <div class ="container">
-    <a class="navbar-brand" routerLink="/">EShopping</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler m1-auto" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="#sidebarMenu"aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <a class="navbar-brand" routerLink="/">EShopping</a>
+
+
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" routerLink="/shopping-cart">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <span class="badge badge-warning badge-pill"*ngIf="cart$ | async as cart">
+            {{ cart.totalItemsCount }}
+          </span>
+        </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <ng-template #anonymousUser>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+      </ng-template>
+      <li ngbDropdown *ngIf="appUser; else anonymousUser" class="nav-item dropdown">
+        <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ appUser.name }}
+        </a>
+        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" routerLink="/my/orders">My Orders</a>
+          <ng-container *ngIf="appUser.isAdmin">
+            <a class="dropdown-item" routerLink="/admin/orders">Manage Orders</a>
+            <a class="dropdown-item" routerLink="/admin/products">Manage Products</a>
+          </ng-container>
+          <a class="dropdown-item" (click)="logout()">Log Out</a>
+        </div>
+      </li>
+    </ul> 
+  </div>
+  </nav>
   
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+  <!-- <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" routerLink="/shopping-cart">
@@ -38,4 +72,4 @@
       </ul> 
     </div>
   </div>
-</nav>
+</nav> --> 

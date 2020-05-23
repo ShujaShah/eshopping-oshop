@@ -1,7 +1,17 @@
 <div class="row">
-  <div class="col-3">
+ <!--
+   <div class="col-3">
     <product-filter [category]="category"></product-filter>
   </div>
+ --> 
+
+ <div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="sidebar-sticky pt-3">
+        <product-filter [category]="category"></product-filter>
+      </div>
+    </nav>
   <div class="col">
     <div class="row" *ngIf="cart$ | async as cart">
         <ng-container *ngFor="let p of filteredProducts; let i = index">
