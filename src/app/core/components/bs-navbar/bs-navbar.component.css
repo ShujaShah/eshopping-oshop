@@ -1,3 +1,15 @@
 .dropdown-toggle{
     cursor: pointer;
 }
+
+
+.navbar-brand
+{
+    position: relative;
+    background: url(assets/images/logo.png);
+    width: 170px;
+    height: 40px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}

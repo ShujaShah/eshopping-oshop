@@ -5,7 +5,8 @@
       <div class="card-body">
         <p>
           You have {{ cart.totalItemsCount }} items in your shopping cart.
-          <button *ngIf="cart.items.length" (click)="clearCart()" class="float-right btn btn-light btn-sm">Clear Shopping Cart</button>
+          <button *ngIf="cart.items.length" (click)="clearCart()" class="float-right btn btn-light btn-sm">
+            Clear Shopping Cart</button>
     
         </p>
       </div>
