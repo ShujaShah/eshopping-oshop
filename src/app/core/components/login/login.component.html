@@ -1,4 +1,27 @@
-<button 
-(click)="login()"
- class= "btn btn-primary">Login with Google
-</button>
+<body >
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12" >
+                <div class="card">
+                    <form class="box">
+                        <h1>Login</h1>
+                        <p class="text-muted"> Please enter your login and password!</p> 
+                        <input type="text" name="" placeholder="Username"> 
+                        <input type="password" name="" placeholder="Password"> 
+                        <a class="forgot text-muted" href="#">Forgot password?</a> 
+                        <input type="submit" name="" value="Login" href="#">
+                        <div class="col-md-12">
+                            __________________________________
+                            <p class="text-muted"> Or Login Using</p>
+                            <ul class="social-network social-circle">
+                                <li><a (click)="login()"class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a (click)="fbLogin()" class="icoFacebook" title="Facebook"><i class="fa fa-facebook-f"></i></a></li>
+                                <li><a (click)="twitterLogin()" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>                        
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

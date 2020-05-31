@@ -25,6 +25,18 @@ user$: Observable<firebase.User>;
     this.afAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
   }
 
+  fbLogin(){
+    let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl')|| '/';
+    localStorage.setItem('returnUrl',returnUrl);
+    this.afAuth.auth.signInWithRedirect(new firebase.auth.FacebookAuthProvider());
+  }
+
+  twitterLogin(){
+    let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl')|| '/';
+    localStorage.setItem('returnUrl',returnUrl);
+    this.afAuth.auth.signInWithRedirect(new firebase.auth.TwitterAuthProvider());
+  }
+
   logout(){
     this.afAuth.auth.signOut();
   }
