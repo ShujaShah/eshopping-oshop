@@ -1,0 +1,23 @@
+<body >
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" >
+                <div class="card">
+                    <form class="box form-group" ngNativeValidate>
+                        <h1>Sign Up</h1>
+                        <p class="text-muted"> Please enter email and password!</p> 
+                       
+                        <input required type="email" class="form-control" name="email"
+                         [(ngModel)]="email" placeholder="Email" #emailCtrl="ngModel"> 
+                         
+                        <input required type="password" class="form-control" name="password" 
+                        [(ngModel)]="password" placeholder="Password" #passwordCtrl="ngModel">
+                       
+                        <input type="submit" name="" value="SignUp" (click)="signUp()">
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

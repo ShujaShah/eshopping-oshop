@@ -21,9 +21,7 @@ export class LoginComponent {
     this.auth.signIn(this.email, this.password);
   }
 
-  signUp(){
-    this.auth.signUp(this.email, this.password);
-  }
+
 
   login(){
     this.auth.login();

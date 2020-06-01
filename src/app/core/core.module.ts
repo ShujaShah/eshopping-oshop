@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from 'shared/shared.module';
+import { SignupComponent } from './components/signup/signup.component';
 
 
 
@@ -13,6 +14,7 @@ import { SharedModule } from 'shared/shared.module';
     BsNavbarComponent,
     HomeComponent,
     LoginComponent,
+    SignupComponent,
   ],
   imports: [
     SharedModule,

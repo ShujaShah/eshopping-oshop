@@ -12,6 +12,7 @@ import { LoginComponent } from './core/components/login/login.component';
 import { CoreModule } from './core/core.module';
 import { ProductsComponent } from './shopping/components/products/products.component';
 import { ShoppingModule } from './shopping/shopping.module';
+import { SignupComponent } from './core/components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ShoppingModule } from './shopping/shopping.module';
   
     RouterModule.forRoot([
       {path: '', component:ProductsComponent},
-      {path: 'login', component:LoginComponent},     
+      {path: 'login', component:LoginComponent},
+      {path: 'signup', component:SignupComponent}   
     ])
   ],
   providers: [
