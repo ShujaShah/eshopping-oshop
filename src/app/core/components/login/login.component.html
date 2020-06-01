@@ -1,17 +1,23 @@
 <body >
     <div class="container">
         <div class="row">
-            <div class="col-xs-12" >
+            <div class="col-md-6" >
                 <div class="card">
-                    <form class="box">
+                    <form class="box form-group" ngNativeValidate>
                         <h1>Login</h1>
                         <p class="text-muted"> Please enter your login and password!</p> 
-                        <input type="text" name="" placeholder="Username"> 
-                        <input type="password" name="" placeholder="Password"> 
+                       
+                        <input required type="email" class="form-control" name="email"
+                         [(ngModel)]="email" placeholder="Email" #emailCtrl="ngModel"> 
+                         
+                        <input required type="password" class="form-control" name="password" 
+                        [(ngModel)]="password" placeholder="Password" #passwordCtrl="ngModel">
+
                         <a class="forgot text-muted" href="#">Forgot password?</a> 
-                        <input type="submit" name="" value="Login" href="#">
+                        
+                        <input type="submit" name="" value="Login" (click)="signIn()">
                         <div class="col-md-12">
-                            __________________________________
+                        __________________________________
                             <p class="text-muted"> Or Login Using</p>
                             <ul class="social-network social-circle">
                                 <li><a (click)="login()"class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>

@@ -19,11 +19,32 @@ user$: Observable<firebase.User>;
     this.user$ = afAuth.authState;
   }
 
+ signIn(email: string, password: string){
+  let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl')|| '/';
+  localStorage.setItem('returnUrl',returnUrl);
+    this.afAuth.auth.signInWithEmailAndPassword(email, password).then(res => {
+    console.log('You are Successfully logged in!');
+  })
+.catch(err => {
+console.log('Something is wrong:',err.message);
+});
+  }
+
+  
+  signUp(email:string, password: string){
+    this.afAuth.auth.createUserWithEmailAndPassword(email, password).then(res => {
+  console.log('You are Successfully signed up!', res);
+  }).catch(error => {
+  console.log('Something is wrong:', error.message);
+  });
+  }
+
   login(){
     let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl')|| '/';
     localStorage.setItem('returnUrl',returnUrl);
     this.afAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
   }
+
 
   fbLogin(){
     let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl')|| '/';

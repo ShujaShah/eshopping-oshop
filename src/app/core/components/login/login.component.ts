@@ -9,12 +9,22 @@ import { AuthService } from 'shared/services/auth.service';
   encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent {
+  email: string;
+  password: string;
 
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
   }
   
+  signIn(){
+    this.auth.signIn(this.email, this.password);
+  }
+
+  signUp(){
+    this.auth.signUp(this.email, this.password);
+  }
+
   login(){
     this.auth.login();
   }
