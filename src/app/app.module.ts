@@ -13,6 +13,8 @@ import { CoreModule } from './core/core.module';
 import { ProductsComponent } from './shopping/components/products/products.component';
 import { ShoppingModule } from './shopping/shopping.module';
 import { SignupComponent } from './core/components/signup/signup.component';
+import {MatSnackBarModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { SignupComponent } from './core/components/signup/signup.component';
   ],
   imports: [
     BrowserModule,
+    MatSnackBarModule,
     SharedModule,
     AdminModule,
     ShoppingModule,
@@ -30,7 +33,9 @@ import { SignupComponent } from './core/components/signup/signup.component';
       {path: '', component:ProductsComponent},
       {path: 'login', component:LoginComponent},
       {path: 'signup', component:SignupComponent}   
-    ])
+    ]),
+  
+    BrowserAnimationsModule
   ],
   providers: [
     AdminAuthGuard,

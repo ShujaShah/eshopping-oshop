@@ -7,6 +7,7 @@ import { AppUser } from 'shared/models/app.user';
 import { UserService } from 'shared/services/user.service';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/observable/of';
+import {MatSnackBar} from '@angular/material';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,8 @@ export class AuthService {
 user$: Observable<firebase.User>;
 
   constructor(private afAuth: AngularFireAuth, private route: ActivatedRoute,
-     private userService : UserService) { 
+     private userService : UserService,
+     private snackBar: MatSnackBar) { 
     this.user$ = afAuth.authState;
   }
 
@@ -23,19 +25,27 @@ user$: Observable<firebase.User>;
   let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl')|| '/';
   localStorage.setItem('returnUrl',returnUrl);
     this.afAuth.auth.signInWithEmailAndPassword(email, password).then(res => {
-    console.log('You are Successfully logged in!');
+    this.snackBar.open('Successfully logged in!', res.observable , {
+      duration:4000
+    } );
   })
 .catch(err => {
-console.log('Something is wrong:',err.message);
+this.snackBar.open('', err.message, {
+  duration:4000,
+});
 });
   }
 
   
   signUp(email:string, password: string){
     this.afAuth.auth.createUserWithEmailAndPassword(email, password).then(res => {
-  console.log('You are Successfully signed up!', res);
+  this.snackBar.open('Successfully signed up!', res,{
+    duration: 4000,
+  });
   }).catch(error => {
-  console.log('Something is wrong:', error.message);
+  this.snackBar.open('', error.message,{
+    duration:4000
+  });
   });
   }
 

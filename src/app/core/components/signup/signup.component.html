@@ -7,11 +7,21 @@
                         <h1>Sign Up</h1>
                         <p class="text-muted"> Please enter email and password!</p> 
                        
-                        <input required type="email" class="form-control" name="email"
+                        <input required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
+                         type="email" class="form-control" name="email"
                          [(ngModel)]="email" placeholder="Email" #emailCtrl="ngModel"> 
+                         <div class= "alert-danger">
+                             <div *ngIf="emailCtrl.touched && !emailCtrl.valid">Email is required !</div>
+                             <div *ngIf="emailCtrl?.errors?.pattern">Enter a valid Email !</div>
+                         </div>
                          
-                        <input required type="password" class="form-control" name="password" 
+                        <input required maxlength="10" minlength="6" type="password" class="form-control" name="password" 
                         [(ngModel)]="password" placeholder="Password" #passwordCtrl="ngModel">
+                        <div class= "alert-danger">
+                            <div *ngIf="passwordCtrl.touched && !passwordCtrl.valid">Password is required !</div>
+                            <div *ngIf="passwordCtrl?.errors?.minlength">Password should be minimum of 6 Characters !</div>
+                            <div *ngIf="passwordCtrl?.errors?.maxlength">Password should be maximum of 10 Characters !</div>
+                        </div>
                        
                         <input type="submit" name="" value="SignUp" (click)="signUp()">
                         
