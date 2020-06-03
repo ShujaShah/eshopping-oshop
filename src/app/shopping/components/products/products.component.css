@@ -1,3 +1,12 @@
 .sticky-top{
     padding-top: 80px;
 }
+
+.highlight{
+     background-color: #a0c5ca;
+     color: #926792;
+}
+
+.carousel-item{
+    padding-bottom: 20px;
+}

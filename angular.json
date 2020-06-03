@@ -85,8 +85,8 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "assets",
+              "favicon.png" 
             ],
             "styles": [
               "src/styles.css"
