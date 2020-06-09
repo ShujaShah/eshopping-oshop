@@ -19,4 +19,11 @@ export class Order {
       }
     })    
   }
+
+  get totalPrice(){
+    let sum = 0;
+    for (let productId in this.items)
+    sum += this.items[productId].totalPrice;
+    return sum;
+  }
 }

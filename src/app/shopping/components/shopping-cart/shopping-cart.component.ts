@@ -17,6 +17,4 @@ cart$
   clearCart(){
     this.shoppingCartService.clearCart();
   }
-
-
 }

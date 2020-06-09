@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { OrderService } from 'shared/services/order.service';
 import 'rxjs/add/operator/take';
 import { Order } from 'shared/models/order';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { Order } from 'shared/models/order';
 })
 export class ViewOrderComponent implements OnInit{
   order: any;
+  items: Order;
 
   constructor(private route: ActivatedRoute,
     private router: Router,
@@ -22,6 +24,7 @@ export class ViewOrderComponent implements OnInit{
       {this.order=data;console.log(data);
       });
   }
+
 
 ngOnInit(){
   
