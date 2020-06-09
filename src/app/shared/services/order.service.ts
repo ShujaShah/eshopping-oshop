@@ -1,6 +1,8 @@
 import { ShoppingCartService } from 'shared/services/shopping-cart.service';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Injectable } from '@angular/core';
+import { Order } from 'shared/models/order';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class OrderService {
@@ -13,8 +15,12 @@ export class OrderService {
     return result;
   }
 
-  getOrders() { 
-    return this.db.list('/orders');
+  getOrders()  { 
+    return this.db.list('/orders',{
+      query:{
+        orderByChild:'datePlaced'
+      }
+    });
   }
 
   getOrdersByUser(userId: string) {
@@ -24,5 +30,8 @@ export class OrderService {
         equalTo: userId        
       }
     });
+  }
+  getOrder(orderId) {
+    return this.db.object('/orders/' + orderId);
   }
 }
