@@ -16,6 +16,7 @@ import { SignupComponent } from './core/components/signup/signup.component';
 import {MatSnackBarModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './core/components/home/home.component';
+import { NotFoundComponent } from './core/components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HomeComponent } from './core/components/home/home.component';
       {path: '', component:HomeComponent},
       {path: 'products', component:ProductsComponent},
       {path: 'login', component:LoginComponent},
-      {path: 'signup', component:SignupComponent}   
+      {path: 'signup', component:SignupComponent},   
+      {path: '**', component:NotFoundComponent}
     ]),
   
     BrowserAnimationsModule

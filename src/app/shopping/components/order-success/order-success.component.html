@@ -1,2 +1,64 @@
-<h1>Thank you!</h1>
-<p>We received your order and will process it within the next 24 hours!</p>
+<body>
+    <div class="not-found parallax">
+        <div class="sky-bg"></div>
+        <div class="wave-7"></div>
+        <div class="wave-6"></div>
+        <a class="wave-island" href="#">
+                <img src="http://res.cloudinary.com/andrewhani/image/upload/v1524501929/404/island.svg" alt="Island">
+            </a>
+        <div class="wave-5"></div>
+        <div class="wave-lost wrp">
+            <span>T</span>
+            <span>H</span>
+            <span>A</span>
+            <span>N</span>
+            <span>K</span>
+            <span>S</span>
+        </div>
+        <div class="wave-4"></div>
+        <div class="wave-boat">
+            <img class="boat" src="http://res.cloudinary.com/andrewhani/image/upload/v1524501894/404/boat.svg" alt="Boat">
+        </div>
+        <div class="wave-3"></div>
+        <div class="wave-2"></div>
+        <div class="wave-1"></div>
+        <div class="wave-message">
+            <p>Order Placed Successfully!</p>
+            <p>Shop again <a routerLink="/home" >Home</a></p>
+        </div>
+    </div>
+    </body>
+    <script>
+        var parallax = function(e) {
+        var windowWidth = $(window).width();
+        if (windowWidth < 768) return;
+        var halfFieldWidth = $(".parallax").width() / 2,
+          halfFieldHeight = $(".parallax").height() / 2,
+          fieldPos = $(".parallax").offset(),
+          x = e.pageX,
+          y = e.pageY - fieldPos.top,
+          newX = (x - halfFieldWidth) / 30,
+          newY = (y - halfFieldHeight) / 30;
+        $('.parallax [class*="wave"]').each(function(index) {
+          $(this).css({
+            transition: "",
+            transform:
+              "translate3d(" + index * newX + "px," + index * newY + "px,0px)"
+          });
+        });
+      },
+      stopParallax = function() {
+        $('.parallax [class*="wave"]').css({
+          transform: "translate(0px,0px)",
+          transition: "all .7s"
+        });
+        $timeout(function() {
+          $('.parallax [class*="wave"]').css("transition", "");
+        }, 700);
+      };
+    $(document).ready(function() {
+      $(".not-found").on("mousemove", parallax);
+      $(".not-found").on("mouseleave", stopParallax);
+    });
+    
+    </script>

@@ -7,6 +7,10 @@
     width: 100%;
   }
 
+  .bg-light {
+    background-color: #dce0e3 !important;
+}
+
   ul.social-network {
     list-style: none;
     display: inline;
