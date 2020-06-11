@@ -15,6 +15,7 @@ import { ShoppingModule } from './shopping/shopping.module';
 import { SignupComponent } from './core/components/signup/signup.component';
 import {MatSnackBarModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeComponent } from './core/components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireModule.initializeApp(environment.firebase),
   
     RouterModule.forRoot([
-      {path: '', component:ProductsComponent},
+      {path: 'home', component:HomeComponent},
+      {path: '', component:HomeComponent},
+      {path: 'products', component:ProductsComponent},
       {path: 'login', component:LoginComponent},
       {path: 'signup', component:SignupComponent}   
     ]),

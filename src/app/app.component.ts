@@ -10,7 +10,7 @@ import {UserService}from 'shared/services/user.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private userService : UserService, private auth: AuthService, router: Router){
+  constructor(private userService : UserService, private auth: AuthService, private router: Router){
     auth.user$.subscribe(user=>{
       if (!user) return;
     

@@ -6,7 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from 'shared/shared.module';
 import { SignupComponent } from './components/signup/signup.component';
-
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -15,13 +15,17 @@ import { SignupComponent } from './components/signup/signup.component';
     HomeComponent,
     LoginComponent,
     SignupComponent,
+    FooterComponent,
   ],
   imports: [
     SharedModule,
-    RouterModule.forChild([])
+    RouterModule.forChild([]),
+
   ],
   exports: [
-    BsNavbarComponent
+    BsNavbarComponent,
+    FooterComponent,
+
   ]
 })
 export class CoreModule { }
