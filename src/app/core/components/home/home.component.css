@@ -30,16 +30,36 @@
     height: 100%; 
   }
   
-  #skills-header {
+  #skills-header1 {
     position: relative;
     min-height: 200px;
-    background: url('../../../../assets/images/banner.jpg');
+    background: url('../../../../assets/images/banner2.jpg');
     background-attachment: fixed;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
     color: #fff; 
     background-position: 0px -300px;
+  }
+
+  #skills-header2 {
+    position: relative;;
+    min-height: 200px;
+    background: url('../../../../assets/images/banner.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: #fff; 
+    background-position: 0px -300px;
+  }
+
+  .contact{
+    position: relative;
+    min-height: 200px;
+    background: url('../../../../assets/images/contact.png');
+    background-attachment: fixed;
+    
   }
     
   .fa {

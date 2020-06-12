@@ -7,6 +7,10 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormField, MatFormFieldModule, MatInputModule, MatError, MatAccordion } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -20,6 +24,12 @@ import { SignupComponent } from './components/signup/signup.component';
   ],
   imports: [
     SharedModule,
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule,
     RouterModule.forChild([]),
 
   ],

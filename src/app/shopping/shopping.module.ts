@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from 'shared/services/auth-guard.service';
 import { SharedModule } from 'shared/shared.module';
+import { ViewMyOrderComponent } from './components/view-my-order/view-my-order.component';
 
 
 
@@ -24,7 +25,8 @@ import { SharedModule } from 'shared/shared.module';
     MyOrdersComponent,
     ProductFilterComponent,
     ShoppingCartSummaryComponent,
-    ShippingFormComponent
+    ShippingFormComponent,
+    ViewMyOrderComponent
   ],
   imports: [
     SharedModule,

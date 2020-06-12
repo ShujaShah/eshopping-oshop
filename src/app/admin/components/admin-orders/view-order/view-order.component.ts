@@ -1,9 +1,8 @@
-import { Component, OnInit, } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { OrderService } from 'shared/services/order.service';
 import 'rxjs/add/operator/take';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Order } from 'shared/models/order';
-import { Observable } from 'rxjs';
+import { OrderService } from 'shared/services/order.service';
 
 
 @Component({

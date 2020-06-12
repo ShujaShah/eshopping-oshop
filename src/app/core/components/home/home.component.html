@@ -11,8 +11,8 @@
           <div class="dark-overlay">
             <div class="container">
               <div class="carousel-caption text-left mb-5">
-                <h1 class="display-4"><strong>Healthy Eating</strong></h1>
-                <p class="lead d-none d-md-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum delectus soluta ab laudantium temporibus quae.</p>
+                <h1 class="display-4"><strong>Bon Appetit</strong></h1>
+                <p class="lead d-none d-md-block">Problems come and go but pizza stays forever </p>
                 <a routerLink="/products" class="btn btn-primary btn-lg mt-2">View Products</a>
               </div>
             </div>
@@ -22,8 +22,8 @@
           <div class="dark-overlay">
             <div class="container">
               <div class="carousel-caption text-center mb-5">
-                <h1 class="display-4"><strong>Organic Meals</strong></h1>
-                <p class="lead d-none d-md-block">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem aliquam accusamus ipsam eos iste atque.</p>
+                <h1 class="display-4"><strong>Healthy Eating</strong></h1>
+                <p class="lead d-none d-md-block">Let food be thy medicine and medicine be thy food.</p>
                 <a routerLink="/login" class="btn btn-primary btn-lg mt-2">Sign Up</a>
               </div>
             </div>
@@ -33,8 +33,8 @@
           <div class="dark-overlay">
             <div class="container">
               <div class="carousel-caption text-right mb-5">
-                <h1 class="display-4"><strong>Whole Foods</strong></h1>
-                <p class="lead d-none d-md-block"><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla quo non aspernatur quos, dolor odio?</strong></p>
+                <h1 class="display-4"><strong></strong>Chocolate Cakes </h1>
+                <p class="lead d-none d-md-block"><strong>A party without cake is just a meeting.</strong></p>
                 <a routerLink="/shopping-cart" class="btn btn-primary btn-lg mt-2">View Cart</a>
               </div>
             </div>
@@ -57,33 +57,34 @@
         <div class="col-md-4 mb-1 text-center">
           <i class="fa fa-leaf mb-2"></i>
           <h3>Healthy Eating</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat nulla natus temporibus officiis impedit explicabo.</p>
+          <p>We care for you. Thus you can browse for the foods that are rich in calcium and vitamins and also which are very low in saturated fats and stays within your daily calorie needs.</p>
         </div>
         <div class="col-md-4 mb-1 text-center">
           <i class="fa fa-cutlery mb-2"></i>
-          <h3>Organic Meals</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nostrum deserunt veritatis obcaecati rerum quas.</p>
+          <h3>Organic Food</h3>
+          <p>Your life is very precious, thus you should eat food which is more nutritious, healthy and free of chemical additives such as pesticides and fertilizers. Such food is very essential and very healthy.</p>
         </div>
         <div class="col-md-4 mb-1 text-center">
-          <i class="fa fa-heart mb-2"></i>
-          <h3>Whole Foods</h3>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem explicabo autem unde! Ipsa, veritatis est?</p>
+          <i class="fa fa-birthday-cake mb-2"></i>
+          <h3>Cakes</h3>
+          <p>Cakes contain different types of ingredients which are rich in nutrients, carbohydrates and proteins in the form of milk, eggs etc. Thus helping in providing energy and serve the body with good quantity of vitamins.</p>
         </div>
       </div>
     </div>
   </section>
   
   <!-- HOME HEADING SECTION -->
-  <section id="skills-header" class="p-5">
+  <section id="skills-header1" class="p-5">
     <div class="dark-overlay">
       <div class="row">
         <div class="col">
           <div class="container pt-5">
-            <h1>EShopping</h1>
+            <h1>Food</h1>
+            <h6>Taste the best qualtity food at the comfort of your home.</h6>
   
             <!-- TAKE A LOOK AT CLASS FOR OVERFLOWS -->
             <p class=" d-md-block">
-               <a routerLink="/products" class="btn btn-primary btn-sm mt-2">All Products</a>
+               <a href="/products?category=Bakery" class="btn btn-primary btn-sm mt-2">Shop</a>
              
             
           </div>
@@ -102,65 +103,114 @@
             <div class="card-header">
               <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
-                  <a class="nav-link active text-dark" data-toggle="tab" href="#clarkstonMI">Clarkston, MI</a>
+                  <a class="nav-link active text-dark" data-toggle="tab" href="#contact">Contact</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-dark" data-toggle="tab" href="#royalOakMI">Royal Oak, MI</a>
+                  <a class="nav-link text-dark" data-toggle="tab" href="#about">About </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-dark" data-toggle="tab" href="#annArborMI">Ann Arbor, MI</a>
+                  <a class="nav-link text-dark" data-toggle="tab" href="#FAQ">FAQ's</a>
                 </li>
               </ul>
             </div>
             <div class="tab-content">
-              <div class="tab-pane active p-3" id="clarkstonMI" role="tabpanel">
+              <div class="tab-pane active p-3" id="contact" role="tabpanel">
                 <div class="row">
                   <div class="col">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet dicta porro quaerat molestias cupiditate, aut necessitatibus molestiae hic! Explicabo, laborum!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam placeat consequuntur repudiandae cupiditate rerum dolores quibusdam, debitis qui laudantium quia?</p>
-                    <p>Address: <br>
-                      1660 N. Shepherd Road <br>
-                      Clarkston, MI 48346
-                    </p>
+                    <form #f = ngForm NgNativeValidate  >
+                      <mat-form-field class="example-full-width">
+                        <mat-label>Email</mat-label>
+                        <input matInput [(ngModel)]="email" [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+                        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                          Please enter a valid email address
+                        </mat-error>
+                        <mat-error *ngIf="emailFormControl.hasError('required')">
+                          Email is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                      <br>
+                      <mat-form-field>
+                        <mat-label>Name</mat-label>
+                        <input matInput #name placeholder="Shuja Shah">
+                      </mat-form-field>
+                      <br>
+                      <mat-form-field class="example-full-width">
+                        <mat-label>Message</mat-label>
+                        <input matInput #message maxlength="256" placeholder="Ex. I need help with...">
+                        <mat-hint text-align="end">{{message.value.length}} / 256</mat-hint>
+                      </mat-form-field> <br> <br>
+                      <button type="submit" [disabled]=!f.invalid class="btn btn-primary"
+                              (click)="contact()">Submit</button> 
+
+                    </form>
+                    
                   </div>
                   <div class="col">
-                    <p>Google Map Pin Locator on Clarkston</p>
+                    <div class="contact"></div>
                   </div>
                 </div>
               </div>
   
-              <div class="tab-pane p-3 fade in" id="royalOakMI" role="tabpanel">
+              <div class="tab-pane p-3 fade in" id="about" role="tabpanel">
                 <div class="row">
                   <div class="col">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus eligendi et, totam itaque dicta reiciendis eveniet harum adipisci rem officiis!</p>
-                    <p>Lorem ipsum dolor elit. Voluptates, fugit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi voluptatum magni vel incidunt laboriosam sint labore dicta reiciendis quae ipsam.</p>
+                    <p>EShopping is a fully responsive ecommerce website that is made in Angular 8. With angular we get high speed and performance and it also comes with incredible tooling that makes the developers life easier. </p>
+                    <p>I am a BE Computer Science Engineer, with an experience of about one year in this domain.Feel free to contact me </p>
                     <p>Address: <br>
-                      702 Michigan Street <br>
-                      Royal Oak, MI 49327
+                      Hubbi Colony LalBazar <br>
+                      Srinagar, J&K 190023
                   </div>
                   <div class="col">
-                    <p>Google Map Pin Locator on Royal Oak</p>
+                    <p><strong>Contact:</strong></p>
+                    <b>Email:</b> Shuja.ashraf11@gmail.com<br>
+                    <b>Phone: </b> 9622444761
                   </div>
                 </div>
               </div>
   
-              <div class="tab-pane fade in p-3" id="annArborMI" role="tabpanel">
-                <div class="row">
-                  <div class="col">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae reprehenderit perspiciatis voluptatum modi vero odit excepturi libero obcaecati! Ipsum, tempora?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores maxime error dolor ullam cupiditate aperiam, repudiandae sunt exercitationem repellat similique.</p>
-                    <p>Address: <br>
-                      304 Burkshire Avenue <br>
-                      Ann Arbor, MI 48437
-                  </div>
-                  <div class="col">
-                    <p>Google Map Pin Locator on Ann Arbor</p>
-                  </div>
-                </div>
+              <div class="tab-pane fade in p-3" id="FAQ" role="tabpanel">
+                <ngb-accordion>
+                  <ngb-panel title="How long will it take to deliver the product.">
+                    <ng-template ngbPanelContent>
+                      Products will be delivered within the 48 hours prior to placing the order.
+                    </ng-template>
+                  </ngb-panel>
+                  <ngb-panel title="Can i pay by card">
+                    <ng-template ngbPanelContent>
+                      No, currently there is no way to pay through online or card mode. We only take cash on delivery. Stay in touch for online mode though.
+                    </ng-template>
+                  </ngb-panel>
+                  <ngb-panel title="Can I return my product">
+                    <ng-template ngbPanelContent>
+                      Yes, you can return the products. Note that the returns are subjected to the products and only food items cannot be returned.
+                    </ng-template>
+                  </ngb-panel>
+                  <ngb-panel title="Is there charge for delivery">
+                    <ng-template ngbPanelContent>
+                      For the total order of more than ₹500, there will be no charge. However, below ₹500 there will be extra delivery charges @50₹ per order.
+                    </ng-template>
+                  </ngb-panel>
+                </ngb-accordion>
               </div>
-  
-  
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="skills-header2" class="p-5">
+    <div class="dark-overlay">
+      <div class="row">
+        <div class="col">
+          <div class="container pt-5">
+            <h1>Fruits</h1>
+            <h6>Best Quality of organic fruits, famous all over the world.</h6>
+  
+            <!-- TAKE A LOOK AT CLASS FOR OVERFLOWS -->
+            <p class=" d-md-block">
+               <a href="/products?category=fruits" class="btn btn-primary btn-sm mt-2">Shop</a>
+             
+            
           </div>
         </div>
       </div>
