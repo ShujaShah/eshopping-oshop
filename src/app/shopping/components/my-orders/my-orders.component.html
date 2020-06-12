@@ -8,11 +8,11 @@
     </tr>
   </thead> 
   <tbody>
-    <tr *ngFor="let order of orders$ | async">
+    <tr *ngFor="let order of (orders$ | async)?.slice().reverse()">
       <td>{{ order.shipping.name }}</td>
       <td>{{ order.datePlaced | date}}</td>
       <td>
-        <a href="#">View</a>
+        <a [routerLink]="['/my/orders/', order.$key]">View</a>
       </td>
     </tr>
   </tbody> 

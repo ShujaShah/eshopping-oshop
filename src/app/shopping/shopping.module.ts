@@ -35,6 +35,7 @@ import { ViewMyOrderComponent } from './components/view-my-order/view-my-order.c
       {path: 'shopping-cart', component:ShoppingCartComponent},
       {path: 'check-out', component:CheckOutComponent, canActivate:[AuthGuard]},
       {path: 'my/orders', component:MyOrdersComponent, canActivate:[AuthGuard]},
+      {path: 'my/orders/:id', component:ViewMyOrderComponent},
       {path: 'order-success/:id', component:OrderSuccessComponent, canActivate:[AuthGuard]}, 
     ])
   ]
