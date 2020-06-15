@@ -14,6 +14,7 @@ import { Observable } from 'rxjs';
 export class ViewOrderComponent implements OnInit{
   order: any;
   items: Order;
+  order$;
 
   constructor(private route: ActivatedRoute,
     private router: Router,

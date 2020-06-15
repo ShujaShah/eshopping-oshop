@@ -1,5 +1,5 @@
 <!-- SHOWCASE SLIDER -->
-<section id="showcase">
+<section  id="showcase">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -96,7 +96,7 @@
   
   <!-- INFO SECTION-->
   <section id="info" class="pt-4">
-    <div class="container">
+    <div class="container" >
       <div class="row">
         <div class="col align-self-center py-3">
           <div class="card">
@@ -115,12 +115,13 @@
             </div>
             <div class="tab-content">
               <div class="tab-pane active p-3" id="contact" role="tabpanel">
-                <div class="row">
-                  <div class="col">
-                    <form #f = ngForm NgNativeValidate  >
+                <div class="row text-center">
+                  <div class="col" >
+                    <form #f = ngForm NgNativeValidate ngSubmit="contact()" >
+                      <!--
                       <mat-form-field class="example-full-width">
                         <mat-label>Email</mat-label>
-                        <input matInput [(ngModel)]="email" [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+                        <input required matInput [(ngModel)]="email" [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
                         <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
                           Please enter a valid email address
                         </mat-error>
@@ -129,6 +130,15 @@
                         </mat-error>
                       </mat-form-field>
                       <br>
+                      -->
+                      <mat-form-field>
+                        <mat-label>Email</mat-label>
+                        <input required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
+                        matInput [(ngModel)]="email" class="form-control" name="email"
+                        [(ngModel)]="email" placeholder="shuja.ashraf11@gmail.com" > 
+                      </mat-form-field> <br>
+
+
                       <mat-form-field>
                         <mat-label>Name</mat-label>
                         <input matInput #name placeholder="Shuja Shah">
@@ -139,7 +149,7 @@
                         <input matInput #message maxlength="256" placeholder="Ex. I need help with...">
                         <mat-hint text-align="end">{{message.value.length}} / 256</mat-hint>
                       </mat-form-field> <br> <br>
-                      <button type="submit" [disabled]=!f.invalid class="btn btn-primary"
+                      <button type="button" [disabled]="!f.valid" class="btn btn-primary"
                               (click)="contact()">Submit</button> 
 
                     </form>
@@ -168,7 +178,7 @@
                 </div>
               </div>
   
-              <div class="tab-pane fade in p-3" id="FAQ" role="tabpanel">
+              <div class="tab-pane fade in p-3 text-center" id="FAQ" role="tabpanel">
                 <ngb-accordion>
                   <ngb-panel title="How long will it take to deliver the product.">
                     <ng-template ngbPanelContent>
