@@ -21,10 +21,4 @@ export class Order {
     })    
   }
 
-  get totalPrice(){
-    let sum = 0;
-    for (let items in Order.items)
-    sum += this.items[items].totalPrice;
-    return sum;
-  }
 }

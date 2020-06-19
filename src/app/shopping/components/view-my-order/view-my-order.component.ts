@@ -24,6 +24,12 @@ export class ViewMyOrderComponent implements OnInit{
       {this.order=data;console.log(data);
       });
   }
+  get totalPrice(){
+    let sum = 0;
+    for (let items in this.order.items)
+    sum += this.order.items[items].totalPrice;
+    return sum;
+  }
 
 
 ngOnInit(){
