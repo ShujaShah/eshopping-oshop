@@ -22,7 +22,8 @@ export class ViewOrderComponent implements OnInit{
 
     let id = this.route.snapshot.paramMap.get('id');
     if (id) this.orderService.getOrder(id).take(1).subscribe(data=>
-      {this.order=data;console.log(data);
+      {this.order=data;
+        console.log(data);
       });
   }
 

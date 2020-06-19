@@ -3,6 +3,7 @@ import { ShoppingCart } from './shopping-cart';
 export class Order { 
   datePlaced: number; 
   items: any[];
+  static items: any;
 
   constructor(public userId: string, public shipping: any, shoppingCart: ShoppingCart) {
     this.datePlaced = new Date().getTime();
@@ -22,8 +23,8 @@ export class Order {
 
   get totalPrice(){
     let sum = 0;
-    for (let productId in this.items)
-    sum += this.items[productId].totalPrice;
+    for (let items in Order.items)
+    sum += this.items[items].totalPrice;
     return sum;
   }
 }
